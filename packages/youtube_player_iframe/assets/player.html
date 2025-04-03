@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <style>
+      html {
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        pointer-events: <<pointerEvents>>;
+      }
+
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        pointer-events: inherit;
+      }
+
+      .embed-container iframe,
+      .embed-container object,
+      .embed-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        pointer-events: inherit;
+      }
+
+      /* Hide all YouTube elements and overlays */
+      .ytp-watermark,
+      .ytp-chrome-top,
+      .ytp-gradient-top,
+      .ytp-gradient-bottom,
+      .ytp-chrome-bottom,
+      .ytp-ce-element,
+      .ytp-pause-overlay,
+      .ytp-title,
+      .ytp-chrome-controls,
+      .ytp-progress-bar-container,
+      .ytp-progress-bar,
+      .ytp-time-display,
+      .ytp-play-button,
+      .ytp-fullscreen-button,
+      .ytp-volume-panel,
+      .ytp-settings-button,
+      .ytp-subtitles-button,
+      .ytp-cards-button,
+      .ytp-live-badge,
+      .ytp-endscreen-content,
+      .ytp-endscreen-paginate,
+      .ytp-endscreen-previous,
+      .ytp-endscreen-next,
+      .ytp-ce-element-show,
+      .ytp-ce-covering-overlay,
+      .ytp-ce-covering-image,
+      .ytp-ce-covering-icon,
+      .ytp-ce-element-shadow,
+      .ytp-ce-element-border,
+      .ytp-ce-video,
+      .ytp-ce-playlist,
+      .ytp-ce-website,
+      .ytp-ce-expanding-overlay,
+      .ytp-ce-expanding-image,
+      .ytp-ce-expanding-icon,
+      .ytp-ce-expanding-overlay-background,
+      .ytp-ce-expanding-overlay-content,
+      .ytp-ce-expanding-overlay-body,
+      .ytp-ce-expanding-overlay-close,
+      .ytp-ce-expanding-overlay-text,
+      .ytp-ce-expanding-overlay-button,
+      .ytp-ce-expanding-overlay-link,
+      .ytp-ce-expanding-overlay-icon,
+      .ytp-ce-expanding-overlay-image,
+      .ytp-ce-expanding-overlay-playlist,
+      .ytp-ce-expanding-overlay-website,
+      .ytp-ce-expanding-overlay-video,
+      .ytp-ce-expanding-overlay-playlist-item,
+      .ytp-ce-expanding-overlay-website-item,
+      .ytp-ce-expanding-overlay-video-item,
+      .ytp-ce-expanding-overlay-playlist-item-thumbnail,
+      .ytp-ce-expanding-overlay-website-item-thumbnail,
+      .ytp-ce-expanding-overlay-video-item-thumbnail,
+      .ytp-ce-expanding-overlay-playlist-item-title,
+      .ytp-ce-expanding-overlay-website-item-title,
+      .ytp-ce-expanding-overlay-video-item-title,
+      .ytp-ce-expanding-overlay-playlist-item-duration,
+      .ytp-ce-expanding-overlay-website-item-duration,
+      .ytp-ce-expanding-overlay-video-item-duration,
+      .ytp-ce-expanding-overlay-playlist-item-author,
+      .ytp-ce-expanding-overlay-website-item-author,
+      .ytp-ce-expanding-overlay-video-item-author,
+      .ytp-ce-expanding-overlay-playlist-item-views,
+      .ytp-ce-expanding-overlay-website-item-views,
+      .ytp-ce-expanding-overlay-video-item-views,
+      .ytp-ce-expanding-overlay-playlist-item-date,
+      .ytp-ce-expanding-overlay-website-item-date,
+      .ytp-ce-expanding-overlay-video-item-date,
+      .ytp-ce-expanding-overlay-playlist-item-description,
+      .ytp-ce-expanding-overlay-website-item-description,
+      .ytp-ce-expanding-overlay-video-item-description,
+      .ytp-ce-expanding-overlay-playlist-item-link,
+      .ytp-ce-expanding-overlay-website-item-link,
+      .ytp-ce-expanding-overlay-video-item-link,
+      .ytp-ce-expanding-overlay-playlist-item-button,
+      .ytp-ce-expanding-overlay-website-item-button,
+      .ytp-ce-expanding-overlay-video-item-button,
+      .ytp-ce-expanding-overlay-playlist-item-icon,
+      .ytp-ce-expanding-overlay-website-item-icon,
+      .ytp-ce-expanding-overlay-video-item-icon,
+      .ytp-ce-expanding-overlay-playlist-item-image,
+      .ytp-ce-expanding-overlay-website-item-image,
+      .ytp-ce-expanding-overlay-video-item-image,
+      .ytp-ce-expanding-overlay-playlist-item-thumbnail-container,
+      .ytp-ce-expanding-overlay-website-item-thumbnail-container,
+      .ytp-ce-expanding-overlay-video-item-thumbnail-container,
+      .ytp-ce-expanding-overlay-playlist-item-content,
+      .ytp-ce-expanding-overlay-website-item-content,
+      .ytp-ce-expanding-overlay-video-item-content,
+      .ytp-ce-expanding-overlay-playlist-item-container,
+      .ytp-ce-expanding-overlay-website-item-container,
+      .ytp-ce-expanding-overlay-video-item-container,
+      .ytp-ce-expanding-overlay-playlist-item-wrapper,
+      .ytp-ce-expanding-overlay-website-item-wrapper,
+      .ytp-ce-expanding-overlay-video-item-wrapper,
+      .ytp-ce-expanding-overlay-playlist-item-inner,
+      .ytp-ce-expanding-overlay-website-item-inner,
+      .ytp-ce-expanding-overlay-video-item-inner,
+      .ytp-ce-expanding-overlay-playlist-item-outer,
+      .ytp-ce-expanding-overlay-website-item-outer,
+      .ytp-ce-expanding-overlay-video-item-outer,
+      .ytp-ce-expanding-overlay-playlist-item-inner-container,
+      .ytp-ce-expanding-overlay-website-item-inner-container,
+      .ytp-ce-expanding-overlay-video-item-inner-container,
+      .ytp-ce-expanding-overlay-playlist-item-outer-container,
+      .ytp-ce-expanding-overlay-website-item-outer-container,
+      .ytp-ce-expanding-overlay-video-item-outer-container,
+      .ytp-ce-expanding-overlay-playlist-item-inner-wrapper,
+      .ytp-ce-expanding-overlay-website-item-inner-wrapper,
+      .ytp-ce-expanding-overlay-video-item-inner-wrapper,
+      .ytp-ce-expanding-overlay-playlist-item-outer-wrapper,
+      .ytp-ce-expanding-overlay-website-item-outer-wrapper,
+      .ytp-ce-expanding-overlay-video-item-outer-wrapper,
+      .ytp-ce-expanding-overlay-playlist-item-inner-inner,
+      .ytp-ce-expanding-overlay-website-item-inner-inner,
+      .ytp-ce-expanding-overlay-video-item-inner-inner,
+      .ytp-ce-expanding-overlay-playlist-item-outer-inner,
+      .ytp-ce-expanding-overlay-website-item-outer-inner,
+      .ytp-ce-expanding-overlay-video-item-outer-inner,
+      .ytp-ce-expanding-overlay-playlist-item-inner-outer,
+      .ytp-ce-expanding-overlay-website-item-inner-outer,
+      .ytp-ce-expanding-overlay-video-item-inner-outer,
+      .ytp-ce-expanding-overlay-playlist-item-outer-outer,
+      .ytp-ce-expanding-overlay-website-item-outer-outer,
+      .ytp-ce-expanding-overlay-video-item-outer-outer,
+      .ytp-ce-expanding-overlay-playlist-item-inner-inner-container,
+      .ytp-ce-expanding-overlay-website-item-inner-inner-container,
+      .ytp-ce-expanding-overlay-video-item-inner-inner-container,
+      .ytp-ce-expanding-overlay-playlist-item-outer-inner-container,
+      .ytp-ce-expanding-overlay-website-item-outer-inner-container,
+      .ytp-ce-expanding-overlay-video-item-outer-inner-container,
+      .ytp-ce-expanding-overlay-playlist-item-inner-outer-container,
+      .ytp-ce-expanding-overlay-website-item-inner-outer-container,
+      .ytp-ce-expanding-overlay-video-item-outer-inner-container,
+      .ytp-ce-expanding-overlay-playlist-item-outer-outer-container,
+      .ytp-ce-expanding-overlay-website-item-outer-outer-container,
+      .ytp-ce-expanding-overlay-video-item-outer-outer-container,
+      .ytp-ce-expanding-overlay-playlist-item-inner-inner-wrapper,
+      .ytp-ce-expanding-overlay-website-item-inner-inner-wrapper,
+      .ytp-ce-expanding-overlay-video-item-inner-inner-wrapper,
+      .ytp-ce-expanding-overlay-playlist-item-outer-inner-wrapper,
+      .ytp-ce-expanding-overlay-website-item-outer-inner-wrapper,
+      .ytp-ce-expanding-overlay-video-item-outer-inner-wrapper,
+      .ytp-ce-expanding-overlay-playlist-item-inner-outer-wrapper,
+      .ytp-ce-expanding-overlay-website-item-inner-outer-wrapper,
+      .ytp-ce-expanding-overlay-video-item-inner-outer-wrapper,
+      .ytp-ce-expanding-overlay-playlist-item-outer-outer-wrapper,
+      .ytp-ce-expanding-overlay-website-item-outer-outer-wrapper,
+      .ytp-ce-expanding-overlay-video-item-outer-outer-wrapper,
+      .ytp-ce-expanding-overlay-playlist-item-inner-inner-inner,
+      .ytp-ce-expanding-overlay-website-item-inner-inner-inner,
+      .ytp-ce-expanding-overlay-video-item-inner-inner-inner,
+      .ytp-ce-expanding-overlay-playlist-item-outer-inner-inner,
+      .ytp-ce-expanding-overlay-website-item-outer-inner-inner,
+      .ytp-ce-expanding-overlay-video-item-outer-inner-inner,
+      .ytp-ce-expanding-overlay-playlist-item-inner-outer-inner,
+      .ytp-ce-expanding-overlay-website-item-inner-outer-inner,
+      .ytp-ce-expanding-overlay-video-item-inner-outer-inner,
+      .ytp-ce-expanding-overlay-playlist-item-outer-outer-inner,
+      .ytp-ce-expanding-overlay-website-item-outer-outer-inner,
+      .ytp-ce-expanding-overlay-video-item-outer-outer-inner,
+      .ytp-ce-expanding-overlay-playlist-item-inner-inner-outer,
+      .ytp-ce-expanding-overlay-website-item-inner-inner-outer,
+      .ytp-ce-expanding-overlay-video-item-inner-inner-outer,
+      .ytp-ce-expanding-overlay-playlist-item-outer-inner-outer,
+      .ytp-ce-expanding-overlay-website-item-outer-inner-outer,
+      .ytp-ce-expanding-overlay-video-item-outer-inner-outer,
+      .ytp-ce-expanding-overlay-playlist-item-outer-outer-outer,
+      .ytp-ce-expanding-overlay-website-item-outer-outer-outer,
+      .ytp-ce-expanding-overlay-video-item-outer-outer-outer {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+
+      /* Hide all YouTube iframe elements */
+      iframe {
+        pointer-events: none !important;
+      }
+
+      /* Hide all YouTube player elements */
+      .ytp-player-content {
+        pointer-events: none !important;
+      }
+
+      /* Hide all YouTube player overlays */
+      .ytp-player-content > * {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+    </style>
+    <title>Youtube Player</title>
+  </head>
+
+  <body>
+    <div class="embed-container">
+      <div id="<<playerId>>"></div>
+    </div>
+
+    <script>
+      var tag = document.createElement("script");
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName("script")[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      var platform = "<<platform>>";
+      var host = "<<host>>";
+      var player;
+      var timerId;
+
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player("<<playerId>>", {
+          host: host,
+          playerVars: <<playerVars>>,
+          events: {
+            onReady: function (event) {
+              handleFullScreenForMobilePlatform();
+              sendMessage('Ready', event);
+            },
+            onStateChange: function (event) {
+              clearTimeout(timerId);
+              sendMessage('StateChange', event.data);
+              if (event.data == 1) {
+                timerId = setInterval(function () {
+                  var state = {
+                    'currentTime': player.getCurrentTime(),
+                    'loadedFraction': player.getVideoLoadedFraction()
+                  };
+
+                  sendMessage('VideoState', JSON.stringify(state));
+                }, 100);
+              }
+            },
+            onPlaybackQualityChange: function (event) {
+              sendMessage('PlaybackQualityChange', event.data);
+            },
+            onPlaybackRateChange: function (event) {
+              sendMessage('PlaybackRateChange', event.data);
+            },
+            onApiChange: function (event) {
+              sendMessage('ApiChange', event.data);
+            },
+            onError: function (event) {
+              sendMessage('PlayerError', event.data);
+            },
+            onAutoplayBlocked: function (event) {
+              sendMessage('AutoplayBlocked', event.data);
+            },
+          },
+        });
+        player.setSize(window.innerWidth, window.innerHeight);
+      }
+
+      window.addEventListener('message', (event) => {
+        try {
+          var data = JSON.parse(event.data);
+
+          if(data.function){
+            var rawFunction = data.function.replaceAll('<<quote>>', '"');
+            var result = eval(rawFunction);
+
+            if(data.key) {
+              var message = {}
+              message[data.key] = result
+              var messageString = JSON.stringify(message);
+
+              event.source.postMessage(messageString , '*');
+            }
+          }
+        } catch (e) { }
+      }, false);
+
+      window.onresize = function () {
+        player.setSize(window.innerWidth, window.innerHeight);
+      };
+
+      function sendPlatformMessage(message) {
+        switch(platform) {
+           case 'android':
+             <<playerId>>.postMessage(message);
+             break;
+           case 'ios':
+             <<playerId>>.postMessage(message, '*');
+             break;
+           case 'web':
+             window.parent.postMessage(message, '*');
+             break;
+         }
+      }
+
+      function sendMessage(key, data) {
+         var message = {};
+         message[key] = data;
+         message['playerId'] = '<<playerId>>';
+         var messageString = JSON.stringify(message);
+
+         sendPlatformMessage(messageString);
+      }
+
+      function getVideoData() {
+        return prepareDataForPlatform(player.getVideoData());
+      }
+
+      function getPlaylist() {
+        return prepareDataForPlatform(player.getPlaylist());
+      }
+
+      function getAvailablePlaybackRates(){
+        return prepareDataForPlatform(player.getAvailablePlaybackRates());
+      }
+
+      function prepareDataForPlatform(data) {
+        if(platform == 'android') return data;
+
+        return JSON.stringify(data);
+      }
+
+      function handleFullScreenForMobilePlatform() {
+        if(platform != 'web') {
+          var ytFrame = document.getElementsByTagName('iframe')[0].contentWindow.document;
+          var fsButton = ytFrame.getElementsByClassName('ytp-fullscreen-button ytp-button')[0];
+
+          if(fsButton != null) {
+            var fsButtonCopy = fsButton.cloneNode(true);
+            fsButton.replaceWith(fsButtonCopy);
+            fsButtonCopy.onclick = function() {
+              sendMessage('FullscreenButtonPressed', '');
+            };
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -158,51 +158,53 @@
       .ytp-ce-expanding-overlay-playlist-item-outer-outer,
       .ytp-ce-expanding-overlay-website-item-outer-outer,
       .ytp-ce-expanding-overlay-video-item-outer-outer,
-      .ytp-ce-expanding-overlay-playlist-item-inner-inner-container,
-      .ytp-ce-expanding-overlay-website-item-inner-inner-container,
-      .ytp-ce-expanding-overlay-video-item-inner-inner-container,
-      .ytp-ce-expanding-overlay-playlist-item-outer-inner-container,
-      .ytp-ce-expanding-overlay-website-item-outer-inner-container,
-      .ytp-ce-expanding-overlay-video-item-outer-inner-container,
-      .ytp-ce-expanding-overlay-playlist-item-inner-outer-container,
-      .ytp-ce-expanding-overlay-website-item-inner-outer-container,
-      .ytp-ce-expanding-overlay-video-item-outer-inner-container,
-      .ytp-ce-expanding-overlay-playlist-item-outer-outer-container,
-      .ytp-ce-expanding-overlay-website-item-outer-outer-container,
-      .ytp-ce-expanding-overlay-video-item-outer-outer-container,
-      .ytp-ce-expanding-overlay-playlist-item-inner-inner-wrapper,
-      .ytp-ce-expanding-overlay-website-item-inner-inner-wrapper,
-      .ytp-ce-expanding-overlay-video-item-inner-inner-wrapper,
-      .ytp-ce-expanding-overlay-playlist-item-outer-inner-wrapper,
-      .ytp-ce-expanding-overlay-website-item-outer-inner-wrapper,
-      .ytp-ce-expanding-overlay-video-item-outer-inner-wrapper,
-      .ytp-ce-expanding-overlay-playlist-item-inner-outer-wrapper,
-      .ytp-ce-expanding-overlay-website-item-inner-outer-wrapper,
-      .ytp-ce-expanding-overlay-video-item-inner-outer-wrapper,
-      .ytp-ce-expanding-overlay-playlist-item-outer-outer-wrapper,
-      .ytp-ce-expanding-overlay-website-item-outer-outer-wrapper,
-      .ytp-ce-expanding-overlay-video-item-outer-outer-wrapper,
-      .ytp-ce-expanding-overlay-playlist-item-inner-inner-inner,
-      .ytp-ce-expanding-overlay-website-item-inner-inner-inner,
-      .ytp-ce-expanding-overlay-video-item-inner-inner-inner,
-      .ytp-ce-expanding-overlay-playlist-item-outer-inner-inner,
-      .ytp-ce-expanding-overlay-website-item-outer-inner-inner,
-      .ytp-ce-expanding-overlay-video-item-outer-inner-inner,
-      .ytp-ce-expanding-overlay-playlist-item-inner-outer-inner,
-      .ytp-ce-expanding-overlay-website-item-inner-outer-inner,
-      .ytp-ce-expanding-overlay-video-item-inner-outer-inner,
-      .ytp-ce-expanding-overlay-playlist-item-outer-outer-inner,
-      .ytp-ce-expanding-overlay-website-item-outer-outer-inner,
-      .ytp-ce-expanding-overlay-video-item-outer-outer-inner,
-      .ytp-ce-expanding-overlay-playlist-item-inner-inner-outer,
-      .ytp-ce-expanding-overlay-website-item-inner-inner-outer,
-      .ytp-ce-expanding-overlay-video-item-inner-inner-outer,
-      .ytp-ce-expanding-overlay-playlist-item-outer-inner-outer,
-      .ytp-ce-expanding-overlay-website-item-outer-inner-outer,
-      .ytp-ce-expanding-overlay-video-item-outer-inner-outer,
-      .ytp-ce-expanding-overlay-playlist-item-outer-outer-outer,
-      .ytp-ce-expanding-overlay-website-item-outer-outer-outer,
-      .ytp-ce-expanding-overlay-video-item-outer-outer-outer {
+      /* Additional selectors for end screens, video titles, and suggestions */
+      .ytp-title-text,
+      .ytp-title-channel,
+      .ytp-title-channel-logo,
+      .ytp-show-cards-title,
+      .ytp-videowall-still,
+      .ytp-related-menu,
+      .ytp-suggestions,
+      .ytp-suggestion-box,
+      .ytp-autonav-endscreen-countdown-container,
+      .ytp-spinner,
+      .ytp-bezel,
+      .ytp-bezel-text,
+      .ytp-bezel-text-wrapper,
+      .html5-endscreen,
+      .html5-video-info-panel,
+      .html5-video-info-panel-content,
+      .html5-video-info-panel-close,
+      .html5-endscreen-content,
+      .html5-endscreen-element,
+      .ytp-upnext,
+      .ytp-upnext-container,
+      .ytp-upnext-autoplay-icon,
+      .ytp-upnext-autoplay-paused,
+      .ytp-upnext-content,
+      .ytp-upnext-cancel,
+      .ytp-upnext-thumbnail,
+      .ytp-upnext-thumbnail-container,
+      .ytp-upnext-title,
+      .ytp-upnext-description,
+      .ytp-upnext-metadata,
+      /* Annotations and info cards */
+      .annotation,
+      .iv-branding,
+      .iv-promo,
+      .ytp-cards-teaser,
+      .ytp-cards-button,
+      .ytp-cards-button-icon,
+      .ytp-cards-teaser-text,
+      .ytp-cards-teaser-icon,
+      .ytp-iv-drawer-open,
+      .ytp-iv-drawer,
+      .ytp-iv-drawer-content,
+      .ytp-iv-drawer-header,
+      .ytp-iv-drawer-close,
+      .ytp-iv-drawer-paid-content,
+      .ytp-iv-drawer-mask {
         display: none !important;
         visibility: hidden !important;
         opacity: 0 !important;
@@ -215,12 +217,14 @@
       }
 
       /* Hide all YouTube player elements */
-      .ytp-player-content {
+      .ytp-player-content,
+      .ytp-iv-player-content {
         pointer-events: none !important;
       }
 
       /* Hide all YouTube player overlays */
-      .ytp-player-content > * {
+      .ytp-player-content > *,
+      .ytp-iv-player-content > * {
         display: none !important;
         visibility: hidden !important;
         opacity: 0 !important;
